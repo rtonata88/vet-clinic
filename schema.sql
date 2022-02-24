@@ -6,7 +6,7 @@ CREATE DATABASE vet_clinic
 
 CREATE TABLE IF NOT EXISTS public.animals
 (
-    id bigint NOT NULL DEFAULT nextval('animals2_id_seq'::regclass),
+    id bigint GENERATED ALWAYS AS IDENTITY,
     name character(20) COLLATE pg_catalog."default" NOT NULL,
     date_of_birth date NOT NULL,
     escape_attempts integer NOT NULL,

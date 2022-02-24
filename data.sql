@@ -19,14 +19,6 @@ values
 	('Blossom', '1998-10-13', 17, true, 3);
 
 
--- begin;
-
--- update animals 
--- 	set species = 'unspecified';
-
--- rollback;
--- end;
-
 begin;
 
 update animals 
@@ -39,11 +31,11 @@ where species is null;
 
 commit;
 
+begin;
+
 delete from animals;
 
 rollback;
-
-end;
 
 
 begin;
@@ -54,12 +46,12 @@ where date_of_birth > '2022-01-01';
 SAVEPOINT SP1;
 
 update animals 
-    set weight = weight * -1;
+    set weight_kg = weight_kg * -1;
 
 rollback to SP1;
 
 update animals 
-    set weight = weight * -1
-where weight < 0;
+    set weight_kg = weight_kg * -1
+where weight_kg < 0;
 
 commit;
