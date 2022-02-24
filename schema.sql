@@ -17,3 +17,6 @@ CREATE TABLE IF NOT EXISTS public.animals
 
 ALTER TABLE IF EXISTS public.animals
     OWNER to postgres;
+
+alter table animals
+add species character(20);
