@@ -70,6 +70,7 @@ insert into species('name') values
 ('Pokemon'),
 ('Digimon');
 
+begin;
 update animals
 	set species_id = 2
 where name like '%mon%';
@@ -78,4 +79,30 @@ where name like '%mon%';
 update animals
 	set species_id = 1
 where species_id is null;
+
+commit;
+
+begin;
+
+update animals
+	set owner_id = 1
+where name = 'Agumon';
+
+update animals
+	set owner_id = 2
+where name in ('Gabumon', 'Pikachu');
+
+update animals
+	set owner_id = 3
+where name in ('Devimon', 'Plantmon');
+
+update animals
+	set owner_id = 4
+where name in ('Charmander', 'Squirtle', 'Blossom');
+
+update animals
+	set owner_id = 5
+where name in ('Angemon', 'Boarmon');
+
+commit;
 
