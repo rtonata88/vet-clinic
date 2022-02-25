@@ -120,7 +120,7 @@ commit;
 begin;
 
 insert into specializations (vet_id, species_id)
-values (1, 1),(3, 1), (3, 1), (4, 2);
+values (1, 1),(3, 1), (3, 2), (4, 2);
 
 commit;
 
