@@ -20,3 +20,33 @@ ALTER TABLE IF EXISTS public.animals
 
 alter table animals
 add species character(20);
+
+
+CREATE TABLE IF NOT EXISTS public.owners
+(
+	id serial PRIMARY KEY,
+    full_name character(20) NOT NULL,
+    age integer NOT NULL
+)
+
+ALTER TABLE IF EXISTS public.owners
+    OWNER to postgres;
+
+CREATE TABLE IF NOT EXISTS public.species
+(
+	id serial PRIMARY KEY,
+    name character(20) NOT NULL
+);
+
+ALTER TABLE IF EXISTS public.species
+    OWNER to postgres;
+
+alter table animals
+drop column species,
+add column species_id integer,
+add column owner_id integer;
+
+alter table animals
+add constraint species_fk FOREIGN KEY (species_id) REFERENCES species (id),
+add constraint owner_fk FOREIGN KEY (owner_id) REFERENCES owners (id);
+
