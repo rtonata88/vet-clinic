@@ -90,3 +90,4 @@ alter table visits
 add constraint visits_animal_fk FOREIGN KEY (animal_id) REFERENCES animals (id),
 add constraint vet_fk FOREIGN KEY (vet_id) REFERENCES vets (id);
 
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
