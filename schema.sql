@@ -91,3 +91,7 @@ add constraint visits_animal_fk FOREIGN KEY (animal_id) REFERENCES animals (id),
 add constraint vet_fk FOREIGN KEY (vet_id) REFERENCES vets (id);
 
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX animal_id_index on visits (animal_id);
+
+CREATE INDEX vet_id_index on visits (vet_id ASC);
