@@ -3,6 +3,10 @@
 # Vet Click Database
 This repo contains the database files used to to create the VET clinic database
 
+## Schema Diagram
+![Schema](https://user-images.githubusercontent.com/18032597/156367082-909bd003-f078-4726-b9af-abb5f42dd0c6.jpg)
+
+
 ## Getting Started
 
 **To setup this database on your local computer, please follow the steps below**
